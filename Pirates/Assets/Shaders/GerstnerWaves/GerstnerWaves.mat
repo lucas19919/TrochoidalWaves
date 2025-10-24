@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Water
-  m_Shader: {fileID: -6465566751694194690, guid: 0d1621ce7a67e6c489dbe0b8e351a294, type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: 0d1621ce7a67e6c489dbe0b8e351a294, type: 3}
+  m_Name: GerstnerWaves
+  m_Shader: {fileID: -6465566751694194690, guid: a195ffad65ce3234188a7d285fb2e02b, type: 3}
+  m_Parent: {fileID: -876546973899608171, guid: a195ffad65ce3234188a7d285fb2e02b, type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -26,15 +26,37 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _Amplitude: 0.05
+    - _Amplitude_1: 0.05
+    - _Amplitude_2: 0.05
+    - _Amplitude_3: 0.05
+    - _Depth: 1
+    - _Depth_1: 1
+    - _Depth_2: 1
+    - _Depth_3: 1
+    - _Gravity: 9.81
     - _OutlineJiggleSpeed: 0.2
+    - _OutlineThickness: 1.35
     - _OutlineWidth: 0.118
+    - _Phase: 0.0001
+    - _Phase_1: 0.0001
+    - _Phase_2: 0.29
+    - _Phase_3: 0.0001
     - _QueueControl: 0
+    - _ScaleTime: 0.05
+    - _ScaleTime_1: 0.05
+    - _ScaleTime_2: 0.05
+    - _ScaleTime_3: 0.05
     - _WaveHeight: 0.3
     - _WaveSpeed: 0.01
     m_Colors:
+    - _Direction: {r: -1, g: 0, b: 1, a: 0}
+    - _Direction_1: {r: 5, g: 0, b: -2, a: 0}
+    - _Direction_2: {r: 2, g: 0, b: 3, a: 0}
+    - _Direction_3: {r: 2, g: 0, b: 1, a: 0}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Water: {r: 0.062032692, g: 0.6298888, b: 0.7735849, a: 1}
-    - _WaterDepth: {r: 0.13968495, g: 0.45953378, b: 0.6886792, a: 1}
+    - _Water: {r: 0.08775366, g: 0.33485976, b: 0.6415094, a: 1}
+    - _WaterDepth: {r: 0.017621929, g: 0.18285911, b: 0.33962262, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3908933878875459642
