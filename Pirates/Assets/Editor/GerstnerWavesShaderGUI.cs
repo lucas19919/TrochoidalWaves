@@ -6,6 +6,7 @@ public class GerstnerWavesShaderGUI : ShaderGUI
 {
     // These bools remember the foldout state
     private bool showGlobals = true;
+    private bool showFoam = true; // <-- ADDED THIS
     private bool showWave1 = true;
     private bool showWave2 = true;
     private bool showWave3 = true;
@@ -13,23 +14,37 @@ public class GerstnerWavesShaderGUI : ShaderGUI
 
     // Declare properties
     MaterialProperty gravity, water, waterDepth;
-    MaterialProperty outlineColor, outlineThickness; // <-- ADDED THESE
+    MaterialProperty outlineColor, outlineThickness;
+    MaterialProperty normalMap, normalTime, normalScale;
     MaterialProperty dir1, depth1, phase1, scaleTime1, amp1;
     MaterialProperty dir2, depth2, phase2, scaleTime2, amp2;
     MaterialProperty dir3, depth3, phase3, scaleTime3, amp3;
     MaterialProperty dir4, depth4, phase4, scaleTime4, amp4;
 
+    // --- ADDED FOAM PROPERTIES ---
+    MaterialProperty foamHeight, foamBlendRange, foamTiling, foamSpeed, foamTexture, foamSharpness, foamColor;
+
+
     public override void OnGUI(MaterialEditor materialEditor, MaterialProperty[] properties)
     {
-        // Find all properties by their Reference Name.
-        // --- These strings MUST match your Shader Graph "Reference" names ---
-
         // --- Globals ---
         gravity = FindProperty("_Gravity", properties);
         water = FindProperty("_Water", properties);
         waterDepth = FindProperty("_WaterDepth", properties);
-        outlineColor = FindProperty("_OutlineColor", properties); // <-- ADDED THIS
-        outlineThickness = FindProperty("_OutlineThickness", properties); // <-- ADDED THIS
+        outlineColor = FindProperty("_OutlineColor", properties);
+        outlineThickness = FindProperty("_OutlineThickness", properties);
+        normalMap = FindProperty("_NormalMap", properties);
+        normalTime = FindProperty("_NormalTime", properties);
+        normalScale = FindProperty("_NormalScale", properties);
+
+        // --- Foam --- (Added this section)
+        foamHeight = FindProperty("_FoamHeight", properties);
+        foamBlendRange = FindProperty("_FoamBlendRange", properties);
+        foamTiling = FindProperty("_FoamTiling", properties);
+        foamSpeed = FindProperty("_FoamSpeed", properties);
+        foamTexture = FindProperty("_FoamTexture", properties);
+        foamSharpness = FindProperty("_FoamSharpness", properties);
+        foamColor = FindProperty("_FoamColor", properties);
 
         // --- Wave 1 ---
         dir1 = FindProperty("_Direction_1", properties);
@@ -59,7 +74,6 @@ public class GerstnerWavesShaderGUI : ShaderGUI
         scaleTime4 = FindProperty("_ScaleTime", properties);
         amp4 = FindProperty("_Amplitude", properties);
 
-
         // --- Draw the Inspector GUI ---
 
         showGlobals = EditorGUILayout.BeginFoldoutHeaderGroup(showGlobals, "Global Settings");
@@ -71,12 +85,34 @@ public class GerstnerWavesShaderGUI : ShaderGUI
 
             EditorGUILayout.Space(); // Adds a small gap
 
-            materialEditor.ShaderProperty(outlineColor, "Outline Color"); // <-- ADDED THIS
-            materialEditor.ShaderProperty(outlineThickness, "Outline Thickness"); // <-- ADDED THIS
+            materialEditor.ShaderProperty(outlineColor, "Outline Color");
+            materialEditor.ShaderProperty(outlineThickness, "Outline Thickness");
+
+            EditorGUILayout.Space();
+
+            materialEditor.ShaderProperty(normalMap, "Normal Map");
+            materialEditor.ShaderProperty(normalTime, "Normal Time");
+            materialEditor.ShaderProperty(normalScale, "Normal Scale");
 
             EditorGUILayout.Space();
         }
         EditorGUILayout.EndFoldoutHeaderGroup();
+
+        // --- Draw Foam Settings --- (Added this section)
+        showFoam = EditorGUILayout.BeginFoldoutHeaderGroup(showFoam, "Foam Settings");
+        if (showFoam)
+        {
+            materialEditor.ShaderProperty(foamColor, "Foam Color");
+            materialEditor.ShaderProperty(foamTexture, "Foam Texture");
+            materialEditor.ShaderProperty(foamHeight, "Foam Height");
+            materialEditor.ShaderProperty(foamBlendRange, "Foam Blend Range");
+            materialEditor.ShaderProperty(foamTiling, "Foam Tiling");
+            materialEditor.ShaderProperty(foamSpeed, "Foam Speed");
+            materialEditor.ShaderProperty(foamSharpness, "Foam Sharpness");
+            EditorGUILayout.Space();
+        }
+        EditorGUILayout.EndFoldoutHeaderGroup();
+
 
         // --- Draw Wave 1 ---
         showWave1 = EditorGUILayout.BeginFoldoutHeaderGroup(showWave1, "Wave 1");

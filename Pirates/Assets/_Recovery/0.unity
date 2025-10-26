@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!23 &35304325 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7d94fae1c6644954ab5cba97293628c4, type: 3}
+  m_PrefabInstance: {fileID: 576059726}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,35 +388,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &544058042 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d94fae1c6644954ab5cba97293628c4, type: 3}
-  m_PrefabInstance: {fileID: 576059726}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &544058043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544058042}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56135c60b6cee3645ba172385d856251, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::waveManager
-  waveRenderer: {fileID: 544058044}
-  waveMaterial: {fileID: 2100000, guid: acfa64ec64be70748998fa8c038f583c, type: 2}
-  showGizmos: 1
-  gridSize: 20
-  gridSpacing: 1
-  gizmoRadius: 0.1
-  gizmoColor: {r: 0, g: 1, b: 1, a: 1}
---- !u!23 &544058044 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7d94fae1c6644954ab5cba97293628c4, type: 3}
-  m_PrefabInstance: {fileID: 576059726}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &576059726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -483,10 +459,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7d94fae1c6644954ab5cba97293628c4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 544058043}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d94fae1c6644954ab5cba97293628c4, type: 3}
 --- !u!1 &598907688
 GameObject:
@@ -550,6 +523,7 @@ GameObject:
   - component: {fileID: 824149590}
   - component: {fileID: 824149595}
   - component: {fileID: 824149597}
+  - component: {fileID: 824149596}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -644,7 +618,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.881, y: 0, z: 0}
-  m_LocalScale: {x: 6.2072, y: 3.1036, z: 3.1036}
+  m_LocalScale: {x: 4.883098, y: 2.441549, z: 2.441549}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1136705803}
@@ -680,6 +654,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &824149596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824149589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56135c60b6cee3645ba172385d856251, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::waveManager
+  waveRenderer: {fileID: 35304325}
+  waveMaterial: {fileID: 2100000, guid: acfa64ec64be70748998fa8c038f583c, type: 2}
+  showGizmos: 1
+  gridSize: 20
+  gridSpacing: 1
+  gizmoRadius: 0.1
+  gizmoColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!114 &824149597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -698,7 +691,7 @@ MonoBehaviour:
   - {fileID: 2076113506}
   - {fileID: 598907689}
   rb: {fileID: 824149595}
-  instance: {fileID: 544058043}
+  instance: {fileID: 824149596}
   magnitude: 15
 --- !u!1 &832575517
 GameObject:
@@ -815,7 +808,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 002a3426ff3196041b2db9262924a0cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
