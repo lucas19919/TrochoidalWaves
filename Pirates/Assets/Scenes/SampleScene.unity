@@ -401,10 +401,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::waveManager
   waveRenderer: {fileID: 544058044}
-  waveMaterial: {fileID: 2100000, guid: acfa64ec64be70748998fa8c038f583c, type: 2}
+  gravityName: _Gravity
+  waves:
+  - directionName: _Direction_1
+    amplitudeName: _Amplitude_1
+    depthName: _Depth_1
+    phaseName: _Phase_1
+    scaleTimeName: _ScaleTime_1
+    direction: {x: 0, y: 0, z: 0, w: 0}
+    amplitude: 0
+    depth: 0
+    phase: 0
+    scaleTime: 0
+  - directionName: _Direction_2
+    amplitudeName: _Amplitude_2
+    depthName: _Depth_2
+    phaseName: _Phase_2
+    scaleTimeName: _ScaleTime_2
+    direction: {x: 0, y: 0, z: 0, w: 0}
+    amplitude: 0
+    depth: 0
+    phase: 0
+    scaleTime: 0
+  - directionName: _Direction_3
+    amplitudeName: _Amplitude_3
+    depthName: _Depth_3
+    phaseName: _Phase_3
+    scaleTimeName: _ScaleTime_3
+    direction: {x: 0, y: 0, z: 0, w: 0}
+    amplitude: 0
+    depth: 0
+    phase: 0
+    scaleTime: 0
+  - directionName: _Direction
+    amplitudeName: _Amplitude
+    depthName: _Depth
+    phaseName: _Phase
+    scaleTimeName: _ScaleTime
+    direction: {x: 0, y: 0, z: 0, w: 0}
+    amplitude: 0
+    depth: 0
+    phase: 0
+    scaleTime: 0
   showGizmos: 1
-  gridSize: 20
-  gridSpacing: 1
+  gizmoGridSize: 20
+  gizmoGridSpacing: 1
   gizmoRadius: 0.1
   gizmoColor: {r: 0, g: 1, b: 1, a: 1}
 --- !u!23 &544058044 stripped
@@ -675,7 +716,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -699,7 +740,7 @@ MonoBehaviour:
   - {fileID: 598907689}
   rb: {fileID: 824149595}
   instance: {fileID: 544058043}
-  magnitude: 15
+  magnitude: 10
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

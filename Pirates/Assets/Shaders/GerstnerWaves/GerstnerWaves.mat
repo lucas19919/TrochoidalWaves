@@ -35,7 +35,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Amplitude: 0.05
-    - _Amplitude_1: 0.05
+    - _Amplitude_1: 0.2
     - _Amplitude_2: 0.05
     - _Amplitude_3: 0.05
     - _Depth: 2
@@ -43,12 +43,12 @@ Material:
     - _Depth_2: 0.5
     - _Depth_3: 0.75
     - _FoamBlendRange: 5
-    - _FoamHeight: 3
+    - _FoamHeight: 0
     - _FoamSharpness: 1.5
     - _FoamSpeed: 0.05
     - _FoamTiling: 0.1
     - _Gravity: 9.81
-    - _NormalScale: 15
+    - _NormalScale: 25
     - _NormalTime: 0.24
     - _OutlineJiggleSpeed: 0.2
     - _OutlineThickness: 0.43
@@ -72,7 +72,7 @@ Material:
     - _FoamColor: {r: 0.90334636, g: 0.92364806, b: 0.9433962, a: 1}
     - _OutlineColor: {r: 1, g: 1, b: 1, a: 1}
     - _Water: {r: 0.11494304, g: 0.27500382, b: 0.38679248, a: 1}
-    - _WaterDepth: {r: 0.078720205, g: 0.2575507, b: 0.5754717, a: 1}
+    - _WaterDepth: {r: 0.16567284, g: 0.2799336, b: 0.4811321, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3908933878875459642
