@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -10,11 +10,6 @@ public class MeshGenerator : MonoBehaviour
 
     [Header("Graphics")]
     [SerializeField] Material material;
-
-    [Header("Ocean Controller")]
-    [SerializeField] OceanController controller;
-
-    GerstnerWave[] waves;
 
     Vector3[] vertices;
     int[] triangles;
@@ -36,7 +31,6 @@ public class MeshGenerator : MonoBehaviour
 
     void Update()
     {
-        waves = controller.waves;
         UpdateVertexPosition();
     }
 
@@ -97,7 +91,7 @@ public class MeshGenerator : MonoBehaviour
         {
             for (int x = 0; x < meshWidth; x++)
             {
-                vertices[v] = GerstnerDisplacement.getDisplacement(x, z, waves);
+                vertices[v] = GerstnerDisplacement.getDisplacement(x, z);
                 v++;
             }
         }
@@ -117,4 +111,4 @@ public class MeshGenerator : MonoBehaviour
         mesh.RecalculateBounds();
         mesh.RecalculateTangents();
     }
-}
+}*/

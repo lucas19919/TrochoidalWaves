@@ -14,9 +14,6 @@ public class Floaters : MonoBehaviour
     [SerializeField] float dampingFactor = 0.8f;
 
     [Header("Ocean Controller")]
-    [SerializeField] OceanController controller;
-
-    GerstnerWave[] waves;
 
 
     private int floaterCount;
@@ -34,13 +31,11 @@ public class Floaters : MonoBehaviour
 
     private void FixedUpdate()
     {
-        waves = controller.waves;
-        
         foreach (Transform floater in floaters)
         {
             Vector3 floaterPos = floater.position;
 
-            float waveDisplacement = GerstnerDisplacement.getDisplacement(floaterPos.x, floaterPos.z, waves).y;
+            float waveDisplacement = GerstnerDisplacement.getDisplacement(floaterPos.x, floaterPos.z).y;
             float currentWaterHeight = waterLevel + waveDisplacement;
 
             float submersionDepth = currentWaterHeight - floaterPos.y;
@@ -75,10 +70,8 @@ public class Floaters : MonoBehaviour
         {
             if (floater != null)
             {
-                Gizmos.DrawSphere(new Vector3(floater.position.x, GerstnerDisplacement.getDisplacement(floater.position.x, floater.position.z, waves).y, floater.position.z), 0.2f);
+                Gizmos.DrawSphere(GerstnerDisplacement.getDisplacement(floater.position.x, floater.position.z), 0.1f);
             }
         }
-
-
     }
 }
