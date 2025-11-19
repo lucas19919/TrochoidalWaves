@@ -1,4 +1,4 @@
-/*using UnityEngine;
+using UnityEngine;
 
 [RequireComponent(typeof(MeshFilter))]
 [RequireComponent(typeof(MeshRenderer))]
@@ -111,4 +111,4 @@ public class MeshGenerator : MonoBehaviour
         mesh.RecalculateBounds();
         mesh.RecalculateTangents();
     }
-}*/
+}

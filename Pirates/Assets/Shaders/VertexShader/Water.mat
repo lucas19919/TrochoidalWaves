@@ -22,7 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
   m_Shader: {fileID: -6465566751694194690, guid: ab8b164b0bded0842a47b89359294322, type: 3}
-  m_Parent: {fileID: -876546973899608171, guid: ab8b164b0bded0842a47b89359294322, type: 3}
+  m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -36,15 +36,33 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _SampleTexture2D_ed028198c5bf486bbf083c10a98c5088_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 90430aaf8f25baa489a1f41ccdb299b1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitude: 0.23
+    - _Amplitude: 0.2
     - _Depth: 10
     - _Gravity: 9.81
-    - _Phase: 1
+    - _NormalScale: 3
+    - _Phase: -1.59
     - _QueueControl: 0
-    - _WaveSpeed: 0.51
+    - _QueueOffset: 0
+    - _WaveSpeed: 0.3
     m_Colors:
     - _Direction: {r: 1, g: 0, b: 1, a: 0}
   m_BuildTextureStacks: []

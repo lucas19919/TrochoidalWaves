@@ -35,8 +35,8 @@ public class Floaters : MonoBehaviour
         {
             Vector3 floaterPos = floater.position;
 
-            float waveDisplacement = GerstnerDisplacement.getDisplacement(floaterPos.x, floaterPos.z).y;
-            float currentWaterHeight = waterLevel + waveDisplacement;
+            float waveHeight = GerstnerDisplacement.getHeightAtPosition(floaterPos.x, floaterPos.z).y;
+            float currentWaterHeight = waterLevel + waveHeight;
 
             float submersionDepth = currentWaterHeight - floaterPos.y;
 
@@ -70,7 +70,14 @@ public class Floaters : MonoBehaviour
         {
             if (floater != null)
             {
-                Gizmos.DrawSphere(GerstnerDisplacement.getDisplacement(floater.position.x, floater.position.z), 0.1f);
+                Gizmos.DrawSphere(new Vector3(floater.position.x, GerstnerDisplacement.getDisplacement(floater.position.x, floater.position.z).y, floater.position.z), 0.1f);
+            }
+        }
+        foreach (Transform floater in floaters)
+        {
+            if (floater != null)
+            {
+                Gizmos.DrawLine(floater.transform.position, new Vector3(floater.position.x, GerstnerDisplacement.getDisplacement(floater.position.x, floater.position.z).y, floater.position.z));
             }
         }
     }
