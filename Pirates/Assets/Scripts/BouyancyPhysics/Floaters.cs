@@ -2,19 +2,15 @@ using UnityEngine;
 
 public class Floaters : MonoBehaviour
 {
-    [Header("Rigidbody")]
-    [SerializeField] Rigidbody rb;
-
     [Header("Floaters")]
     [SerializeField] Transform[] floaters;
 
     [Header("Buoyancy Settings")]
-    [SerializeField] float waterLevel = 0f;
-    [SerializeField] float buoyancyMagnitude = 15f;
-    [SerializeField] float dampingFactor = 0.8f;
-
-    [Header("Ocean Controller")]
-
+    [SerializeField] float waterLevel;
+    [SerializeField] float buoyancyMagnitude;
+    [SerializeField] float dampingFactor;
+    
+    Rigidbody rb;
 
     private int floaterCount;
 
@@ -27,6 +23,8 @@ public class Floaters : MonoBehaviour
             return;
         }
         floaterCount = floaters.Length;
+
+        rb = this.GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
