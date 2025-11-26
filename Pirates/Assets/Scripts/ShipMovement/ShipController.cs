@@ -19,7 +19,6 @@ public class ShipController : MonoBehaviour
     [SerializeField] float fluidDensity;
     [SerializeField] float rudderSurfaceArea;
 
-
     Rigidbody rb;
 
     private void Start()
@@ -35,6 +34,11 @@ public class ShipController : MonoBehaviour
 
         rb.AddForceAtPosition(this.transform.forward * thrust * propSpeed, prop.position);
         rudder.Rotate(0, -yaw * steeringSensitivity * Time.deltaTime, 0);
+        rudder.localEulerAngles = new Vector3(
+            rudder.localEulerAngles.x,
+            Mathf.Clamp(rudder.localEulerAngles.y > 180 ? rudder.localEulerAngles.y - 360 : rudder.localEulerAngles.y, -90, 90),
+            rudder.localEulerAngles.z
+        );
 
         Vector3 fluidVelocity = -rb.GetPointVelocity(rudder.position);
         float attackAngle = Vector3.SignedAngle(fluidVelocity, -rudder.transform.forward, rudder.transform.up) * Mathf.Deg2Rad;
@@ -50,9 +54,6 @@ public class ShipController : MonoBehaviour
 
         rb.AddForceAtPosition(liftDirection * liftForce, rudder.position);
         rb.AddForceAtPosition(dragDirection * dragForce, rudder.position);
-
-        Debug.Log("L: " + liftDirection * liftForce);
-        Debug.Log("D: " + dragDirection * dragForce);
     }
 
     private void OnDrawGizmos()
