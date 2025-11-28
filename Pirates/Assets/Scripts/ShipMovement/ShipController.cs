@@ -18,6 +18,7 @@ public class ShipController : MonoBehaviour
     [Header("Physics Settings")]
     [SerializeField] float fluidDensity;
     [SerializeField] float rudderSurfaceArea;
+    [SerializeField] float waveDrag;
 
     Rigidbody rb;
 
@@ -54,6 +55,8 @@ public class ShipController : MonoBehaviour
 
         rb.AddForceAtPosition(liftDirection * liftForce, rudder.position);
         rb.AddForceAtPosition(dragDirection * dragForce, rudder.position);
+
+        rb.AddForce(OceanMaster.direction.normalized * OceanMaster.waveSpeed * waveDrag);
     }
 
     private void OnDrawGizmos()

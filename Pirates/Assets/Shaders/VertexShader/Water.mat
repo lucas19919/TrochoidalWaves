@@ -55,11 +55,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitude: 0.2
+    - _Amplitude: 0.3
     - _Depth: 10
     - _Gravity: 9.81
     - _NormalScale: 4
-    - _Phase: -1.59
+    - _Phase: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _WaveSpeed: 0.3
